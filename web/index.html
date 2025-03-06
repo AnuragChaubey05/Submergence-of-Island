@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submergence of Island</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="conatiner">
+
+        <div class="main1">
+
+            <div class="class1">
+                <a onclick="clickPrediction()">Prediction</a>
+
+                <a onclick="clickDashboard()">Dashboard</a>
+
+                <a onclick="">Insights</a>
+            </div>
+            
+        </div>
+
+        <div class="main2">
+            
+            <div class="class2">
+                
+                Prediction of Submergence of Island (lakshadweep)
+
+            </div>
+
+            <!-- Dashboard -->
+
+            <div id="c3" class="class3">
+                
+                <div class="class33">
+
+                    <div class="g1">
+                        <img class="img4" src="dashboard/dash3.png">
+                    </div>
+
+                    <div class="g2">
+                        <img class="img2" src="dashboard/dash1.png">
+                    </div>
+
+                    <div class="g3">
+                        <img class="img3" src="dashboard/dash2.png">
+                    </div>
+
+                    <div class="g4">
+                        <img class="img5" src="dashboard/dash4.png">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Prediction -->
+
+            <div id="c4" class="class4">
+                
+                <div class="class44">
+
+                    <div class="f1">
+
+                        <select id="input-year">
+                            <option>Select the Year</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                        </select>
+
+                    </div>
+
+                    <div class="f2">
+
+                        <button id="sub-btn" onclick="plotGraph()">Submit</button>
+
+                    </div>
+
+                    <!-- ML Model -->
+                    <div id="f3" class="f3">
+                    
+                        <!-- 1.89 --> 
+
+                    </div>
+                    <!-- ML Model -->
+
+                    <div id="f4" class="f4">
+
+                        <canvas id="myChart"></canvas>
+
+                    </div>
+
+                    <div id="f5" class="f5">
+
+                        <canvas id="myChart1"></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
