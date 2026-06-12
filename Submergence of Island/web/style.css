@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-main: #060913;
+    --bg-glow: radial-gradient(circle at 50% 50%, #0d1b35, #04070e);
+    --panel-bg: rgba(255, 255, 255, 0.03);
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --panel-hover: rgba(255, 255, 255, 0.06);
+    --panel-hover-border: rgba(255, 255, 255, 0.15);
+    
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    
+    --accent-cyan: #06b6d4;
+    --accent-blue: #3b82f6;
+    --accent-orange: #f97316;
+    --accent-gradient: linear-gradient(135deg, #06b6d4, #3b82f6);
+    --accent-gradient-orange: linear-gradient(135deg, #f97316, #ec4899);
+    
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-main);
+    background-image: var(--bg-glow);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.conatiner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    height: calc(100vh - 40px);
+    gap: 20px;
+}
+
+.main1 {
+    width: 20%;
+    height: 100%;
+}
+
+.main2 {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* Custom Scrollbar for Main Content */
+.main2::-webkit-scrollbar {
+    width: 6px;
+}
+.main2::-webkit-scrollbar-track {
+    background: transparent;
+}
+.main2::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.main2::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Styling */
+.class1 {
+    width: 100%;
+    height: 100%;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 24px;
+    box-shadow: var(--card-shadow);
+    padding: 24px 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Logo or Sidebar Header */
+.sidebar-header {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 24px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 16px;
+}
+
+.class1 a {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+}
+
+.class1 a:hover {
+    background: var(--panel-hover);
+    color: var(--text-primary);
+    border-color: var(--panel-border);
+    transform: translateX(4px);
+}
+
+.class1 a.active {
+    background: var(--accent-gradient);
+    color: white;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+}
+
+/* Title / Header Styling */
+.class2 {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    min-height: 8vh;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-left: 5px solid var(--accent-cyan);
+}
+
+/* View Sections Base */
+.class3, .class4, .class5 {
+    width: 100%;
+    border-radius: 24px;
+    box-sizing: border-box;
+}
+
+.class3 {
+    display: none;
+    justify-content: center;
+}
+
+.class4 {
+    display: flex;
+    justify-content: center;
+}
+
+.class5 {
+    display: none;
+    justify-content: center;
+}
+
+/* Grid Layouts */
+.class33 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.class44 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+}
+
+/* Card Wrappers */
+.g1, .g2, .g3, .g4 {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    padding: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.g1:hover, .g2:hover, .g3:hover, .g4:hover {
+    transform: translateY(-5px);
+    background: var(--panel-hover);
+    border-color: var(--panel-hover-border);
+    box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
+}
+
+/* Card titles inside Dashboard */
+.card-title {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    align-self: flex-start;
+}
+
+.img2, .img3, .img4, .img5 {
+    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Prediction controls styling */
+.f1 {
+    grid-column: 1 / 4;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.f1 select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 8px;
+}
+
+.f1 select option {
+    background: #0d1527;
+    color: var(--text-primary);
+}
+
+.f2 {
+    grid-column: 4 / 6;
+    box-sizing: border-box;
+}
+
+#sub-btn {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
+}
+
+#sub-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+    filter: brightness(1.1);
+}
+
+#sub-btn:active {
+    transform: translateY(0);
+}
+
+/* Prediction Result KPI Card */
+.f3 {
+    grid-column: 6 / 11;
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(59, 130, 246, 0.05));
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+    gap: 16px;
+}
+
+.f3::before {
+    content: "❄️";
+    font-size: 28px;
+}
+
+/* Charts Containers */
+.f4, .f5 {
+    grid-column: 1 / 11;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.f4-header, .f5-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 12px;
+}
+
+.f4-title, .f5-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--accent-cyan);
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 320px; /* fixed responsive height container */
+}
+
+/* Chart Canvas styling to handle inside container */
+#myChart, #myChart1 {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Dynamic Chart Explanation Boxes */
+.chart-desc-box {
+    background: rgba(255, 255, 255, 0.015);
+    border-left: 3px solid var(--accent-blue);
+    padding: 12px 16px;
+    border-radius: 0 12px 12px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.f5-title {
+    color: var(--accent-orange);
+}
+
+.f5 .chart-desc-box {
+    border-left-color: var(--accent-orange);
+}
+
+/* Insights tab stylesheet */
+.insights-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.insights-card {
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--card-shadow);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.insights-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--panel-hover-border);
+    box-shadow: 0 12px 40px rgba(6, 182, 212, 0.1);
+}
+
+.insights-card.wide {
+    grid-column: span 2;
+}
+
+.insights-card.full {
+    grid-column: span 3;
+}
+
+.insights-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.insights-card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: var(--accent-cyan);
+}
+
+.insights-card h3.orange-text {
+    color: var(--accent-orange);
+}
+
+.insights-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Metric / Stat design inside Insights */
+.stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+}
+
+.stat-val {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.dashboard-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-top: 12px;
+    margin-bottom: 0;
+    text-align: justify;
+    align-self: flex-start;
+}
+
+/* responsive media queries */
+@media (max-width: 1024px) {
+    .main1 {
+        width: 100%;
+        height: auto;
+    }
+    .main2 {
+        width: 100%;
+    }
+    .conatiner {
+        flex-direction: column;
+        height: auto;
+    }
+    .class33 {
+        grid-template-columns: 1fr;
+    }
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+    .insights-card.wide, .insights-card.full {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .class1 {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px;
+        gap: 8px;
+    }
+    .sidebar-header {
+        display: none;
+    }
+    .class1 a {
+        font-size: 14px;
+        padding: 8px 12px;
+        justify-content: center;
+        flex: 1;
+        text-align: center;
+    }
+    .class1 a:hover {
+        transform: none;
+    }
+    .class2 {
+        font-size: 18px;
+        padding: 12px;
+        min-height: auto;
+    }
+    .class44 {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .f1, .f2 {
+        width: 100%;
+    }
+    .f3 {
+        font-size: 16px;
+        padding: 12px 16px;
+        width: 100%;
+    }
+    .f4, .f5 {
+        padding: 16px;
+    }
+    .chart-wrapper {
+        height: 240px;
+    }
+    .chart-desc-box {
+        font-size: 12px;
+    }
+    .insights-card {
+        padding: 16px;
+    }
+    .stat-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}

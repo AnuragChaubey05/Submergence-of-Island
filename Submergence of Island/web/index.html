@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submergence of Island (Lakshadweep)</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="conatiner">
+
+        <!-- Sidebar Navigation -->
+        <aside class="main1">
+            <div class="class1">
+                <div class="sidebar-header">Submergence Study</div>
+                <a id="nav-prediction" class="active" onclick="clickPrediction()">Prediction</a>
+                <a id="nav-dashboard" onclick="clickDashboard()">Dashboard</a>
+                <a id="nav-insights" onclick="clickInsights()">Insights</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main2">
+            
+            <header class="class2">
+                Prediction of Submergence of Island (Lakshadweep)
+            </header>
+
+            <!-- Dashboard View -->
+            <section id="c3" class="class3">
+                <div class="class33">
+                    <div class="g1">
+                        <div class="card-title">Glacier Melt Rate Anomalies</div>
+                        <img class="img4" src="dashboard/dash3.png" alt="Glacier Melt Rate Anomalies">
+                        <p class="dashboard-desc">
+                            Plots the monthly anomalies of Sea Ice Extent (SIE). Over time, negative anomalies dominate, indicating a consistent reduction in the net surface area of ice sheets compared to the historical baseline. This trend is a key driver of rising ocean volumes.
+                        </p>
+                    </div>
+
+                    <div class="g2">
+                        <div class="card-title">Global Temperature Correlation</div>
+                        <img class="img2" src="dashboard/dash1.png" alt="Global Temperature Correlation">
+                        <p class="dashboard-desc">
+                            Illustrates the historical correlation between rising global temperatures and sea-level anomalies. The clear positive slope demonstrates how thermal expansion of seawater and glacial runoff accelerate directly alongside global warming.
+                        </p>
+                    </div>
+
+                    <div class="g3">
+                        <div class="card-title">Sea Ice Extent Shrinkage</div>
+                        <img class="img3" src="dashboard/dash2.png" alt="Sea Ice Extent Shrinkage">
+                        <p class="dashboard-desc">
+                            Visualizes the historical decline of Arctic and Antarctic sea ice extent (measured in million square kilometers). The steady contraction of ice sheets reduces the Earth's albedo effect, creating a feedback loop that warms the oceans.
+                        </p>
+                    </div>
+
+                    <div class="g4">
+                        <div class="card-title">Lakshadweep Island Submergence Risk Map</div>
+                        <img class="img5" src="dashboard/dash4.png" alt="Lakshadweep Island Submergence Risk Map">
+                        <p class="dashboard-desc">
+                            A geographic vulnerability risk map of the Lakshadweep islands. Highlighting low-lying regions (average elevation 1-2m), the map designates critical zones at risk of permanent flooding, storm surge inundation, and shoreline erosion as sea levels rise.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Prediction View -->
+            <section id="c4" class="class4">
+                <div class="class44">
+                    <div class="f1">
+                        <select id="input-year" aria-label="Select Target Year">
+                            <option>Select the Year</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                        </select>
+                    </div>
+
+                    <div class="f2">
+                        <button id="sub-btn" onclick="plotGraph()">Submit</button>
+                    </div>
+
+                    <!-- ML Model Output KPI Card -->
+                    <div id="f3" class="f3" style="display: none;">
+                        <!-- Filled dynamically by JavaScript -->
+                    </div>
+
+                    <!-- Chart 1 Card -->
+                    <div id="f4" class="f4" style="display: none;">
+                        <div class="f4-header">
+                            <div class="f4-title">Historical Sea Level Rise (1992 - Present)</div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <div id="chart-desc" class="chart-desc-box">
+                            Please select a year and click Submit to visualize historical trends.
+                        </div>
+                    </div>
+
+                    <!-- Chart 2 Card -->
+                    <div id="f5" class="f5" style="display: none;">
+                        <div class="f5-header">
+                            <div class="f5-title">Projected Rise & Threshold Window (2024 - Target)</div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="myChart1"></canvas>
+                        </div>
+                        <div id="chart1-desc" class="chart-desc-box">
+                            Detailed projections will appear here.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Insights View -->
+            <section id="c5" class="class5">
+                <div class="insights-container">
+                    <div class="insights-grid">
+                        
+                        <!-- Card 1: Glacier Melting & Sea Level connection -->
+                        <div class="insights-card wide">
+                            <div class="insights-icon">🌊</div>
+                            <h3>Glaciers, Ice Sheets, and Sea Levels</h3>
+                            <p>
+                                The connection between glacier melting and sea level rise is direct and powerful. When continental ice sheets (like Greenland and Antarctica) and mountain glaciers melt, they transfer millions of metric tons of water into the world's oceans.
+                            </p>
+                            <p style="margin-top: 12px;">
+                                This water addition increases the net ocean volume. Simultaneously, global warming causes thermal expansion—water expands as it heats—further raising sea level.
+                            </p>
+                        </div>
+
+                        <!-- Card 2: Lakshadweep Island Vulnerability -->
+                        <div class="insights-card">
+                            <div class="insights-icon">🌴</div>
+                            <h3>Lakshadweep Vulnerability</h3>
+                            <p>
+                                Lakshadweep is an archipelago of low-lying coral atolls in the Laccadive Sea, with an average elevation of just 1 to 2 meters above sea level.
+                            </p>
+                            <p style="margin-top: 12px;">
+                                Even a minor rise in sea levels leads to severe shoreline erosion, saltwater intrusion into fresh groundwater lenses, and frequent storm surges that threaten to submerge critical areas of islands like Kavaratti and Bangaram.
+                            </p>
+                        </div>
+
+                        <!-- Card 3: Model Details and metrics -->
+                        <div class="insights-card full">
+                            <div class="insights-icon">📈</div>
+                            <h3>Machine Learning Model Insights</h3>
+                            <p>
+                                Two main models drive the analysis and predictions on this dashboard:
+                            </p>
+                            
+                            <div class="stat-row">
+                                <div class="stat-item">
+                                    <div class="stat-val">0.568</div>
+                                    <div class="stat-label">Glacier Model R² Score</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val">OLS Regression</div>
+                                    <div class="stat-label">Glacier Model Type</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val">LSTM Time-Series</div>
+                                    <div class="stat-label">Sea Level Rise Model</div>
+                                </div>
+                            </div>
+                            
+                            <p style="margin-top: 16px;">
+                                The **Glacier Model** uses ordinary least squares (OLS) regression to estimate anomalies in September Sea Ice Extent (SIE) using time variables. The model shows a statistically significant downward coefficient of <strong>-0.568 million km²</strong> of sea ice per year.
+                            </p>
+                            <p style="margin-top: 12px;">
+                                The **Sea Level Rise Model** uses a Long Short-Term Memory (LSTM) network—which is a state-of-the-art neural network architecture designed specifically for time-series forecasting—to predict future sea-level trajectories based on historical monthly sequences. The model predicts a continuous, rising trend through the year 2028.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+    
+</body>
+</html>
